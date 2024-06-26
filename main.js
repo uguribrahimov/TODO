@@ -1,3 +1,4 @@
+
 const name = document.querySelector("#name");
 const form = document.querySelector('form');
 const description = document.querySelector("#description");
@@ -9,7 +10,7 @@ let updateIndex = -1;
 
 form.addEventListener('submit', e => {
     e.preventDefault();
-    
+
     if (!name.value || !description.value) {
         if (!name.value) {
             name.classList.add('is-invalid');
@@ -47,10 +48,10 @@ form.addEventListener('submit', e => {
 });
 
 filter.addEventListener('input', e => {
-    const searchTerm = e.target.value.toLowerCase();
+    const searchInp = e.target.value.toLowerCase();
     const filteredData = data.filter(item => 
-        item.name.toLowerCase().includes(searchTerm) || 
-        item.description.toLowerCase().includes(searchTerm)
+        item.name.toLowerCase().includes(searchInp) || 
+        item.description.toLowerCase().includes(searchInp)
     );
     updateTable(filteredData);
 });
@@ -99,9 +100,6 @@ function updateItem(e) {
     isUpdating = true;
     updateIndex = index;
 }
-
-
-
 
 
 
