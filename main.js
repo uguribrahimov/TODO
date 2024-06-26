@@ -46,11 +46,11 @@ form.addEventListener('submit', e => {
     }
 });
 
-filter.addEventListener('.search', e => {
-    const searchInp = e.target.value.toLowerCase();
+filter.addEventListener('input', e => {
+    const searchTerm = e.target.value.toLowerCase();
     const filteredData = data.filter(item => 
-        item.name.toLowerCase().includes(searchInp) || 
-        item.description.toLowerCase().includes(searchInp)
+        item.name.toLowerCase().includes(searchTerm) || 
+        item.description.toLowerCase().includes(searchTerm)
     );
     updateTable(filteredData);
 });
